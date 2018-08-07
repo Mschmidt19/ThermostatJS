@@ -16,7 +16,6 @@ function Thermostat () {
 
 Thermostat.prototype.up = function (amount) {
   if ((this.temperature + amount) > this.maximumTemp()) {
-    console.log(this);
     throw new Error("Power Save is " + this.powerSaveMode + ". Maximum temperature is " + this.maximumTemp() + " degrees");
   }
   else {
@@ -44,4 +43,16 @@ Thermostat.prototype.powerSaveSwitch = function () {
 
 Thermostat.prototype.reset = function () {
   this.temperature = 20;
+};
+
+Thermostat.prototype.energyUsage = function () {
+  if (this.temperature < 18) {
+    return "Low";
+  }
+  else if (this.temperature < 25) {
+    return "Medium";
+  }
+  else {
+    return "High";
+  };
 };

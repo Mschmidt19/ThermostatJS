@@ -9,7 +9,8 @@ describe('Thermostat', function() {
   });
 
   describe('tests for temperature', function() {
-    it('temperature at 20 degrees', function() {
+
+    it('temperature starts at 20 degrees', function() {
       expect(thermostat.temperature).toEqual(20);
     });
 
@@ -44,6 +45,29 @@ describe('Thermostat', function() {
       });
     });
 
+    describe('#maximumTemp', function() {
+      it('temperature has a maximum of 25 when in power save mode', function() {
+        expect(thermostat.maximumTemp()).toEqual(25);
+      });
+      it('temperature has a maximum of 32 when not in power save mode', function() {
+        thermostat.powerSaveSwitch();
+        expect(thermostat.maximumTemp()).toEqual(32);
+      });
+    });
+
+    describe('#reset', function() {
+      it('resets temperature to 20', function () {
+        thermostat.up(4);
+        expect(thermostat.temperature).toEqual(24);
+        thermostat.reset();
+        expect(thermostat.temperature).toEqual(20);
+      });
+    });
+
+  });
+
+  describe('Tests for power save mode', function() {
+
     describe('#powerSaveMode', function() {
       it('starts in power save mode', function() {
         expect(thermostat.powerSaveMode).toEqual("on");
@@ -62,22 +86,22 @@ describe('Thermostat', function() {
       });
     });
 
-    describe('#maximumTemp', function() {
-      it('temperature has a maximum of 25 when in power save mode', function() {
-        expect(thermostat.maximumTemp()).toEqual(25);
-      });
-      it('temperature has a maximum of 32 when not in power save mode', function() {
-        thermostat.powerSaveSwitch();
-        expect(thermostat.maximumTemp()).toEqual(32);
-      });
-    });
+  });
 
-    describe('#reset', function() {
-      it('resets temperature to 20', function () {
-        thermostat.up(4);
-        expect(thermostat.temperature).toEqual(24);
-        thermostat.reset();
-        expect(thermostat.temperature).toEqual(20);
+  describe('Tests for energy usage', function() {
+
+    describe('#energyUsage', function(){
+      it('returns "low" if temperature is < 18 degrees', function() {
+        thermostat.down(4);
+        expect(thermostat.energyUsage()).toEqual("Low");
+      });
+      it('returns "medium" if 18 < temperature < 25 degrees', function() {
+        expect(thermostat.energyUsage()).toEqual("Medium");
+      });
+      it('returns "high" if temperature is >= 25 degrees', function() {
+        thermostat.powerSaveSwitch();
+        thermostat.up(8);
+        expect(thermostat.energyUsage()).toEqual("High");
       });
     });
 

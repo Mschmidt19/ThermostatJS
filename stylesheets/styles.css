@@ -1,0 +1,90 @@
+.centered_text {
+  text-align: center;
+}
+.centering_container {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 479px){
+  .colleft {
+    line-height: 40vh;
+    height: 40vh;
+  }
+  .colright {
+    height: 40vh;
+  }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 767px){
+  .colleft {
+    line-height: 40vh;
+    height: 40vh;
+  }
+  .colright {
+    height: 40vh;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px){
+  .colleft {
+    line-height: 40vh;
+    height: 40vh;
+  }
+  .colright {
+    height: 40vh;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1999px){
+  .colleft {
+    line-height: 60vh;
+    height: 60vh;
+  }
+  .colright {
+    height: 60vh;
+  }
+}
+.colleft {
+
+}
+
+.dial {
+  vertical-align: middle;
+  margin-left: auto;
+  margin-right: auto;
+  height: 65%;
+  width: auto;
+  z-index: 2;
+}
+.dialnumbers {
+  vertical-align: middle;
+  margin-left: auto;
+  margin-right: auto;
+  height: 70%;
+  width: auto;
+  z-index: 1;
+}
+.grey {
+  background-color: #222222;
+}
+.interface_container {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+}
+.page_title {
+  font-family: 'Petit Formal Script', cursive;
+  font-size: 6vmin;
+  margin-bottom: 0;
+  margin-top: 4vh;
+}
+.whole_page_container {
+  display: table;
+  position: absolute;
+  width: 100vw;
+  height: 85vh;
+  max-width: 100vw;
+  max-height: 85vh;
+  bottom: 0;
+}
