@@ -32,18 +32,29 @@ Thermostat.prototype.down = function (amount) {
   }
 };
 
+Thermostat.prototype.setTempTo25 = function () {
+  this.temperature = 25;
+};
+
 Thermostat.prototype.powerSaveSwitch = function () {
   if (this.powerSaveMode === "ON") {
     this.powerSaveMode = "OFF";
   }
   else {
-    this.powerSaveMode = "ON";
+    if (this.temperature > 25) {
+      this.setTempTo25();
+      this.powerSaveMode = "ON";
+    }
+    else {
+      this.powerSaveMode = "ON";
+    }
   }
 };
 
 Thermostat.prototype.reset = function () {
   this.temperature = 20;
 };
+
 
 Thermostat.prototype.energyUsage = function () {
   if (this.temperature < 18) {

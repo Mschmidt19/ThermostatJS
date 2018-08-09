@@ -51,7 +51,7 @@
   vertical-align: middle;
 }
 .colleft {
-  background-image: url("../images/DialNumbers.png");
+  background-image: url("../images/DialNumbersLighter.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 45vmin;
@@ -65,14 +65,11 @@
   height: auto;
   width: 40vmin;
   border-style: solid;
-  border-color: #222222;
+  border-color: #5F51AB;
   border-radius: 50%;
 }
-#energyusagetext {
-  color: white;
-}
 .grey {
-  background-color: #222222;
+  background-color: #303030;
 }
 .inline {
   display: inline;
@@ -110,6 +107,10 @@
   max-height: 85vh;
   bottom: 0;
 }
+.yellow_text {
+  color: #FFE34C;
+}
+
 @media only screen and (min-width: 320px) and (max-width: 479px){
   .colleft {
     line-height: 40vh;

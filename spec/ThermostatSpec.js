@@ -64,6 +64,21 @@ describe('Thermostat', function() {
       });
     });
 
+    describe('#setTempTo25', function() {
+      it('sets temperature to 25, when below 25', function () {
+        expect(thermostat.temperature).toEqual(20);
+        thermostat.setTempTo25();
+        expect(thermostat.temperature).toEqual(25);
+      });
+      it('sets temperature to 25, when above 25', function () {
+        thermostat.powerSaveSwitch()
+        thermostat.up(10)
+        expect(thermostat.temperature).toEqual(30);
+        thermostat.setTempTo25();
+        expect(thermostat.temperature).toEqual(25);
+      });
+    });
+
   });
 
   describe('Tests for power save mode', function() {
@@ -84,6 +99,13 @@ describe('Thermostat', function() {
         thermostat.powerSaveSwitch();
         expect(thermostat.powerSaveMode).toEqual("ON");
       });
+      it('resets temperature to 25 if currently above 25', function() {
+        thermostat.powerSaveSwitch();
+        thermostat.up(10);
+        expect(thermostat.temperature).toEqual(30);
+        thermostat.powerSaveSwitch();
+        expect(thermostat.temperature).toEqual(25);
+      })
     });
 
   });
