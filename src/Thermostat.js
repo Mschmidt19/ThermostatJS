@@ -3,9 +3,9 @@
 function Thermostat () {
   this.temperature = 20;
   this.minimumTemp = 10;
-  this.powerSaveMode = "on";
+  this.powerSaveMode = "ON";
   this.maximumTemp = function() {
-    if (this.powerSaveMode === "on") {
+    if (this.powerSaveMode === "ON") {
       return 25;
     }
     else {
@@ -33,11 +33,11 @@ Thermostat.prototype.down = function (amount) {
 };
 
 Thermostat.prototype.powerSaveSwitch = function () {
-  if (this.powerSaveMode === "on") {
-    this.powerSaveMode = "off";
+  if (this.powerSaveMode === "ON") {
+    this.powerSaveMode = "OFF";
   }
   else {
-    this.powerSaveMode = "on";
+    this.powerSaveMode = "ON";
   }
 };
 

@@ -1,3 +1,48 @@
+.button {
+  font-size: 10vmin;
+  display: inline-block;
+  background-color: Transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+.button:focus {
+  outline: 0;
+}
+.button:hover {
+  color: lightgrey;
+}
+.buttonleft {
+  margin-right: 4vmin;
+}
+.buttonpowersave {
+  margin-bottom: 12%;
+}
+.buttonreset {
+  margin-top: 12%;
+}
+.buttontransparent {
+  background-color: white;
+  border: none;
+  color: #222222;
+  cursor: pointer;
+  border-radius: 8px;
+}
+.buttontransparent:focus {
+  outline: 0;
+}
+.buttontransparent:hover {
+  background-color: lightgrey;
+}
+.buttonright {
+  margin-left: 4vmin;
+}
+.button_container {
+  height: auto;
+  width: 100%;
+  margin-top: 4%;
+  margin-bottom: 4%;
+}
 .centered_text {
   text-align: center;
 }
@@ -5,7 +50,66 @@
   display: table-cell;
   vertical-align: middle;
 }
-
+.colleft {
+  background-image: url("../images/DialNumbers.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 45vmin;
+}
+.colright {
+  display: table;
+}
+.dial {
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+  width: 40vmin;
+  border-style: solid;
+  border-color: #222222;
+  border-radius: 50%;
+}
+#energyusagetext {
+  color: white;
+}
+.grey {
+  background-color: #222222;
+}
+.inline {
+  display: inline;
+}
+.interface_container {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+}
+.page_title {
+  font-family: 'Petit Formal Script', cursive;
+  font-size: 6vmin;
+  margin-bottom: 0;
+  margin-top: 4vh;
+}
+.subtitle {
+  font-size: 3vmin;
+  margin-bottom: 0;
+}
+.vertical_centered {
+  height: auto;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.white_text {
+  color: white;
+}
+.whole_page_container {
+  display: table;
+  position: absolute;
+  width: 100vw;
+  height: 85vh;
+  max-width: 100vw;
+  max-height: 85vh;
+  bottom: 0;
+}
 @media only screen and (min-width: 320px) and (max-width: 479px){
   .colleft {
     line-height: 40vh;
@@ -44,47 +148,4 @@
   .colright {
     height: 60vh;
   }
-}
-.colleft {
-
-}
-
-.dial {
-  vertical-align: middle;
-  margin-left: auto;
-  margin-right: auto;
-  height: 65%;
-  width: auto;
-  z-index: 2;
-}
-.dialnumbers {
-  vertical-align: middle;
-  margin-left: auto;
-  margin-right: auto;
-  height: 70%;
-  width: auto;
-  z-index: 1;
-}
-.grey {
-  background-color: #222222;
-}
-.interface_container {
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 0;
-}
-.page_title {
-  font-family: 'Petit Formal Script', cursive;
-  font-size: 6vmin;
-  margin-bottom: 0;
-  margin-top: 4vh;
-}
-.whole_page_container {
-  display: table;
-  position: absolute;
-  width: 100vw;
-  height: 85vh;
-  max-width: 100vw;
-  max-height: 85vh;
-  bottom: 0;
 }

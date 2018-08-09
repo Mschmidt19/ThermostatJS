@@ -5,6 +5,7 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Petit+Formal+Script" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
   </head>
   <body>
     <p class="centered_text page_title">Thermostat</p>
@@ -13,16 +14,35 @@
         <div class="interface_container container">
           <div class="row">
             <div class="col-lg-6 col-md-12 colleft grey centered_text">
-              <img class="dial" src="images/ThermostatDial.png" />
-              <img class="dialnumbers" src="images/Dial Numbers.png" />
+              <img id="dial" class="dial" src="images/ThermostatDial.png" />
             </div>
             <div class="col-lg-6 col-md-12 colright grey centered_text">
-
+              <div class="centering_container">
+                <div class="vertical_centered">
+                  <p class="centered_text white_text subtitle inline">Temperature: </p>
+                  <p id="temperaturetext" class="centered_text white_text subtitle inline"></p>
+                  <p class="centered_text white_text subtitle inline">&#176;</p>
+                </br>
+                  <button id="tempreset" class="buttontransparent buttonreset">Reset Temperature &nbsp; <i class="fas fa-undo"></i></button>
+                  <div class="button_container">
+                    <button id="tempdown" class="button buttonleft"><i class="fas fa-caret-square-down"></i></button>
+                    <button id="tempup" class="button buttonright"><i class="fas fa-caret-square-up"></i></button>
+                  </div>
+                  <button id="powersaveswitch" class="buttontransparent buttonpowersave">
+                    Power Save Mode: <p id="powersavemodetext" class="inline"></p>
+                  </button>
+                </br>
+                  <p class="centered_text white_text subtitle inline">Energy Usage: </p>
+                  <p id="energyusagetext" class="centered_text subtitle inline"></p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
     <script src="src/thermostat.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="js/interface.js"></script>
   </body>
 </html>
