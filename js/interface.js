@@ -1,4 +1,8 @@
 $(document).ready(function() {
+
+  var current_city;
+  displayWeather("london");
+
   var thermostat = new Thermostat();
   updateTemperature();
   updateTempColor();
@@ -8,6 +12,15 @@ $(document).ready(function() {
   var counter = 8.182;
   updateRotation();
 
+  function displayWeather(city) {
+    var url = 'http://api.openweathermap.org/data/2.5/weather?q=' + city;
+    var token = '&appid=e1fdf520da28052b80c85b7b5c5de67c';
+    var units = '&units=metric';
+    $.get(url + token + units, function(data) {
+     $('#current-temperature').text(data.main.temp);
+    })
+    $('#current-city-text').text(current_city);
+  }
 
   function updateTemperature() {
     $('#temperaturetext').text(thermostat.temperature);
@@ -128,6 +141,18 @@ $(document).ready(function() {
     updatePowerSaveMode();
     updateTextColor();
   }
+
+  function toTitleCase(str) {
+    return str.replace(/\w\S*/g, function(txt){
+      return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+    });
+  }
+
+  $('#current-city').change(function() {
+    var lowercase_city = $('#current-city').val();
+    current_city = toTitleCase(lowercase_city);
+    displayWeather(lowercase_city);
+  })
 
   $('#tempdown').on('click', function() {
     thermostat.down(1);

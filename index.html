@@ -9,6 +9,19 @@
   </head>
   <body>
     <p class="centered_text page_title">Thermostat</p>
+    <div class="centered_text">
+      <section>
+        <p class="weather_text">Current temperature in <span id="current-city-text">London</span> is <span id="current-temperature"></span>&#176; C</p>
+        <select id="current-city">
+          <option value="london">London</option>
+          <option value="new york">New York</option>
+          <option value="los angeles">Los Angeles</option>
+          <option value="las vegas">Las Vegas</option>
+          <option value="paris">Paris</option>
+          <option value="tokyo">Tokyo</option>
+        </select>
+      </section>
+    </div>
     <div class="whole_page_container">
       <div class="centering_container">
         <div class="interface_container container">
@@ -19,9 +32,9 @@
             <div class="col-lg-6 col-md-12 colright grey centered_text">
               <div class="centering_container">
                 <div class="vertical_centered">
-                  <p class="centered_text white_text subtitle inline">Temperature: </p>
-                  <p id="temperaturetext" class="centered_text subtitle inline"></p>
-                  <p class="centered_text white_text subtitle inline">&#176;</p>
+                  <p class="white_text subtitle inline">Temperature: </p>
+                  <p id="temperaturetext" class="subtitle inline"></p>
+                  <p class="white_text subtitle inline">&#176;</p>
                 </br>
                   <button id="tempreset" class="buttontransparent buttonreset">Reset Temperature &nbsp; <i class="fas fa-undo"></i></button>
                   <div class="button_container">
@@ -32,8 +45,8 @@
                     Power Save Mode is: <p id="powersavemodetext" class="inline"></p>
                   </button>
                 </br>
-                  <p class="centered_text white_text subtitle inline">Energy Usage: </p>
-                  <p id="energyusagetext" class="centered_text subtitle inline yellow_text"></p>
+                  <p class="white_text subtitle inline">Energy Usage: </p>
+                  <p id="energyusagetext" class="subtitle inline yellow_text"></p>
                 </div>
               </div>
             </div>
