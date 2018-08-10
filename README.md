@@ -1,1 +1,1 @@
-# [Check it out here!](https://mschmidt19.github.io/ThermostatJS/)
+# <a href="https://mschmidt19.github.io/ThermostatJS/" target="_blank">Check it out here!</a>

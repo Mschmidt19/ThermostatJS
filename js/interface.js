@@ -13,7 +13,7 @@ $(document).ready(function() {
   updateRotation();
 
   function displayWeather(city) {
-    var url = 'http://api.openweathermap.org/data/2.5/weather?q=' + city;
+    var url = 'https://api.openweathermap.org/data/2.5/weather?q=' + city;
     var token = '&appid=e1fdf520da28052b80c85b7b5c5de67c';
     var units = '&units=metric';
     $.get(url + token + units, function(data) {
